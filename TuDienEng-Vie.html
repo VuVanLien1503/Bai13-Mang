@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TuDien-Eng-viet</title>
+</head>
+<body>
+<div>
+    <input type="text" id="inputEng" placeholder="Eng">
+    <input type="text" id="inputViet" placeholder="Viet"><br>
+    <p id="errorText"></p>
+    <button onclick="sendArray()">Send</button>
+</div>
+<br>
+
+<div>
+    <input id="inputTranslate" type="text" placeholder="Tra tu">
+    <br>
+    <br>
+    <button onclick="engViet()">Check</button>
+    <p id="result"></p>
+</div>
+</body>
+<script>
+    let arrayEng=["hello","bye"];
+    let arrayViet=["xin Chao","Tam Biet"];
+    function sendArray(){
+        let inputEng=document.getElementById("inputEng").value;
+        let inputViet=document.getElementById("inputViet").value;
+            if ( arrayEng.indexOf(inputEng) != -1||(inputViet == "" && inputEng == "") ){
+                document.getElementById("errorText").innerHTML="da ton tai"
+            }else {
+                arrayEng.push(inputEng);
+                arrayViet.push(inputViet);
+                document.getElementById("errorText").innerHTML = "Them Thanh Cong :"+ inputEng + " translate : "+ inputViet;
+            }
+
+    }
+    function engViet (){
+        let inputTran =document.getElementById("inputTranslate").value;
+        let index=0;
+        let result ="";
+            for (let i=0;i<arrayEng.length ;i++){
+                if (inputTran==arrayEng[i]){
+                    index=i;
+                    result=arrayViet[index];
+                }else {
+                    result= "Chua Ton Tai.";
+                }
+            }
+            document.getElementById("result").innerHTML=result;
+    }
+
+
+
+</script>
+</html>
