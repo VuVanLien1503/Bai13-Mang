@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CaRo</title>
+    <style>
+     button {
+         height: 30px;
+         width: 30px;
+     }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td><button onclick="write1()"id="write1"></button></td>
+        <td><button onclick="write2()"id="write2"></button></td>
+        <td><button onclick="write3()"id="write3"></button></td>
+    </tr>
+    <tr>
+        <td><button onclick="write4()"id="write4"></button></td>
+        <td><button onclick="write5()"id="write5"></button></td>
+        <td><button onclick="write6()"id="write6"></button></td>
+
+    </tr>
+    <tr>
+        <td><button onclick="write7()"id="write7"></button></td>
+        <td><button onclick="write8()"id="write8"></button></td>
+        <td><button onclick="write9()"id="write9"></button></td>
+    </tr>
+</table>
+<button onclick="checkArray()">check Array</button>
+<p id="reusltArray"></p>
+<p id="reusltArray1"></p>
+<script>
+   let arrayX=new Array(3)
+   for (let i=0;i<3;i++){
+       arrayX[i]=new Array(3);
+   }
+   let count=1;
+   let check=false;
+   function checkPlay(){
+       if (count%2===0){
+           check=true;
+           count++
+           return check
+       }else {
+           check=false;
+           count++;
+           return check
+       }
+   }
+   function write1(){
+       checkPlay()
+       if (check===true){
+           for (let i =0;i<3;i++){
+
+           }
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write1").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write2(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write2").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write3(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write3").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write4(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write4").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write5(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write5").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write6(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write6").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write7(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write7").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write8(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write8").innerHTML=arrayX[arrayX.length-1];
+   }
+   function write9(){
+       checkPlay()
+       if (check===true){
+           arrayX.push("x")
+       }else {
+           arrayX.push("O")
+       }
+
+        document.getElementById("write9").innerHTML=arrayX[arrayX.length-1];
+   }
+function checkArray(){
+      document.getElementById("reusltArray").innerHTML=arrayX;
+      // document.getElementById("reusltArray1").innerHTML=arrayX[3][3];
+}
+function checkwin(){
+
+}
+</script>
+</body>
+</html>
