@@ -34,10 +34,12 @@
 </div>
 <div>
     Bài 4:
-    Viết chương trình tính tổng các số nguyên tố nhỏ hơn 500.
-    <button onclick="bai4()">BaiLam</button>
+    Viết chương trình tính tổng các số nguyên tố nhỏ hơn 500.<br>
+    <button onclick="bai4()">BaiLam</button><br>
     <p id="result4"></p>
     <p id="result41"></p>
+    <p id="result42"></p>
+    <p id="result43"></p>
 </div>
 </body>
 <script>
@@ -114,15 +116,26 @@
         let number=0;
         let sum = 0;
         let array=[];
+        let array500=[]
+        let sum500=0;
         while (number<500){
             number++;
             if (checkPrime(number)===true){
                 array.push(number)
                 sum+=number;
+                if (sum500<500){
+                    array500.push(number);
+                    sum500+=number;
+                    if (sum500>500){
+                        sum500-=number;
+                    }
+                }
             }
         }
         document.getElementById("result4").innerHTML=array;
-        document.getElementById("result41").innerHTML=sum;
+        document.getElementById("result41").innerHTML="tong song nguyen to = "+sum;
+        document.getElementById("result42").innerHTML="array 500  = "+array500;
+        document.getElementById("result43").innerHTML= "tong so nguyen to < 500 ="+sum500;
     }
 
 </script>
