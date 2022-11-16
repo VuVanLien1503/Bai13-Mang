@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    Bài 1:
+    Cho trước 1 mảng n phần tử.<br>
+    Viết chương trình để in ra số lượng các số chẵn trong mảng.<br>
+    <button onclick="bai1()">BaiLam</button>
+    <p id="result1"></p>
+    <p id="result11"></p>
+</div>
+<div>
+    Bài 2:
+    Cho trước 1 mảng n phần tử.<br>
+    Viết chương trình cho phép đếm xem có bao nhiêu phần tử a <br>
+    (Giá trị a nhập vào từ bàn phím).<br>
+    <button onclick="bai2()">BaiLam</button>
+    <p id="result2"></p>
+    <p id="result21"></p>
+</div>
+<div>
+    Bài 3:
+    Cho trước 1 mảng n phần tử<br>
+    Viết hàm tính tổng các số nguyên tố trong mảng.<br>
+    <button onclick="bai3()">BaiLam</button><br>
+    <p id="result3"></p>
+    <p id="result31"></p>
+    <p id="result32"></p>
+
+</div>
+<div>
+    Bài 4:
+    Viết chương trình tính tổng các số nguyên tố nhỏ hơn 500.
+    <button onclick="bai4()">BaiLam</button>
+    <p id="result4"></p>
+    <p id="result41"></p>
+</div>
+</body>
+<script>
+    function arrayRandom(number){
+        let array=[];
+        for (let i=0;i<number;i++){
+            array.push(Math.floor(Math.random()*30))
+        }
+        return array;
+    }
+    function checkEven(array=[]){
+        let arrayEven=[];
+       for (let i=0;i<array.length;i++){
+           if (array[i]%2===0){
+               arrayEven.push(array[i])
+           }
+       }
+        return arrayEven;
+    }
+    function compareArray(array=[]){
+        let input=prompt("nhap so can tim")
+        for (let i= 0;i<array.length;i++){
+            if (array[i]==input){
+                array[i]=prompt("da tim thay : "+array[i] + " vi tri :"+ i+" Nhap so thay the")
+            }
+        }
+        return array;
+    }
+    function checkPrime(n){
+        let check =true;
+        if (n<2){
+            check = false;
+        }else {
+            for ( let i = 2 ;i<n-1; i++){
+                if (n % i ===0){
+                    check = false;
+                    break;
+                }
+            }
+        }
+        return check;
+    }
+
+
+
+    function bai1() {
+        let array=arrayRandom(prompt("nhap do dai cua mang"));
+        let amountArray=checkEven(array);
+        document.getElementById("result1").innerHTML=array;
+        document.getElementById("result11").innerHTML=amountArray+"do dai ="+amountArray.length;
+    }
+    function bai2(){
+        let array=arrayRandom(prompt("Nhap Do dai cua mang"))
+        document.getElementById("result2").innerHTML=array
+        document.getElementById("result21").innerHTML=compareArray(array)
+
+    }
+    function bai3(){
+        let array=arrayRandom(prompt("Nhap do dai array"))
+        let sum=0;
+        let arrayPrime=[];
+        for ( let i=0 ; i<array.length;i++){
+            if (checkPrime(array[i])==true){
+                arrayPrime.push(array[i]);
+                sum+=array[i];
+            }
+            document.getElementById("result3").innerHTML="Mang Array = "+array;
+            document.getElementById("result31").innerHTML="Mang ArrayPrime="+arrayPrime;
+            document.getElementById("result32").innerHTML="Tong Prime = "+sum;
+        }
+
+    }
+    function bai4(){
+        let number=0;
+        let sum = 0;
+        let array=[];
+        while (number<500){
+            number++;
+            if (checkPrime(number)===true){
+                array.push(number)
+                sum+=number;
+            }
+        }
+        document.getElementById("result4").innerHTML=array;
+        document.getElementById("result41").innerHTML=sum;
+    }
+
+</script>
+</html>
